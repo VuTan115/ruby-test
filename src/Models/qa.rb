@@ -1,14 +1,14 @@
 
-class QualityAssurance < Employee
-  def initialize(employee_id, name ) 
-    super(employee_id, name, 'qa')
+class Qa < Employee
+  def initialize(employee_id, name,working_hours, ot_hours = 0 ) 
+    super(employee_id, name, 'qa' ,working_hours)
   end
 
-  def calculate_salary(hours , ot_hours = 0)
-    if ot_hours > 0
-      return @base_salary *( hours  * 1.15 + ot_hours * 1.5)
+  def calculate_salary()
+    if @ot_hours.to_i > 0
+      return @base_salary.to_f *( @working_hours.to_f  * 1.15 + @ot_hours.to_f * 1.5)
     else
-      return @base_salary * hours  * 1.15
+      return @base_salary.to_f * @working_hours.to_f  * 1.15
     end
   end
 end

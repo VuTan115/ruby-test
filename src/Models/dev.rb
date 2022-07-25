@@ -1,14 +1,12 @@
-
-
-class Developer < Employee
-  def initialize(employee_id, name  )
-    super(employee_id, name, 'dev')
+class Dev < Employee
+  def initialize(employee_id, name ,working_hours,ot_hours = 0 )
+    super(employee_id, name, 'dev',working_hours)
   end
-  def calculate_salary(hours , ot_hours)
-    if ot_hours > 0
-      return @base_salary *( hours  * 1.15 + ot_hours * 1.5)
+  def calculate_salary()
+    if @ot_hours.to_i > 0
+      return @base_salary *(@working_hours  * 1.15 + @ot_hours * 1.5)
     else
-      return @base_salary * hours  * 1.15
+      return @base_salary * @working_hours  * 1.15
     end
   end
 end
