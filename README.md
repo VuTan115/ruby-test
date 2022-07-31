@@ -22,4 +22,4 @@ Hãy viết chương trình thực hiện các yêu cầu sau:
 2. Hiển thị toàn bộ thông tin nhân viên
 3. Lấy ra mã nhân viên có số lương > 5000
 
-## note: chỉ cần chạy file index.rb 
+## note: Git clone && ruby index.rb
